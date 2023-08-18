@@ -2,7 +2,7 @@
 # not include the .xe postfix. If left blank the name will default to
 # the project name
 
-APP_NAME = app_hid_mouse_demo
+APP_NAME = app_hid_mouse_demo_lib_xud_2.2.3
 
 # The flags passed to xcc when building the application
 # You can also set the following to override flags for a particular language:
@@ -17,27 +17,18 @@ APP_NAME = app_hid_mouse_demo
 BUILD_FLAGS = -O3 -report -fxscope
 
 XCC_FLAGS_200 = $(BUILD_FLAGS)
-XCC_FLAGS_AI = $(BUILD_FLAGS)
-XCC_FLAGS_AI_C = $(BUILD_FLAGS)
 
 USED_MODULES = lib_xud
 
-# The TARGET variable determines what target system the application is 
+# The TARGET variable determines what target system the application is
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling.
 
 # In this case, the target depends on the build configuration.
-ifeq ($(CONFIG),AI)
-TARGET = XCORE-AI-EXPLORER
+
+TARGET = SST-XMOS-001_V1
 EXCLUDE_FILES = main.c
-else ifeq ($(CONFIG),AI_C)
-TARGET = XCORE-AI-EXPLORER
-EXCLUDE_FILES = main.xc \
-				endpoint0.xc
-else
-TARGET = XCORE-200-EXPLORER
-EXCLUDE_FILES = main.c
-endif
+
 #=============================================================================
 # The following part of the Makefile includes the common build infrastructure
 # for compiling XMOS applications. You should not need to edit below here.
