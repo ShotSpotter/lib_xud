@@ -14,7 +14,7 @@ APP_NAME = app_hid_mouse_demo_lib_xud_2.2.3
 
 # These flags define two build configurations - one for xCORE-200 and one for
 # the xCORE.AI series.
-BUILD_FLAGS = -O3 -report -fxscope
+BUILD_FLAGS = -O3 -report -fxscope -DUSB_TILE=tile[1]
 
 XCC_FLAGS_200 = $(BUILD_FLAGS)
 
